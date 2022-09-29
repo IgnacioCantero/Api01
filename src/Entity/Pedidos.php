@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\PedidosRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -52,10 +54,14 @@ class Pedidos
     private $restaurante;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Platos::class)
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\OneToMany(targetEntity=CantidadesPlatosPedidos::class, mappedBy="pedido", orphanRemoval=true)
      */
-    private $platos;
+    private $cantidadesPlatosPedidos;
+
+    public function __construct()
+    {
+        $this->cantidadesPlatosPedidos = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -134,14 +140,32 @@ class Pedidos
         return $this;
     }
 
-    public function getPlatos(): ?Platos
+    /**
+     * @return Collection<int, CantidadesPlatosPedidos>
+     */
+    public function getCantidadesPlatosPedidos(): Collection
     {
-        return $this->platos;
+        return $this->cantidadesPlatosPedidos;
     }
 
-    public function setPlatos(?Platos $platos): self
+    public function addCantidadesPlatosPedido(CantidadesPlatosPedidos $cantidadesPlatosPedido): self
     {
-        $this->platos = $platos;
+        if (!$this->cantidadesPlatosPedidos->contains($cantidadesPlatosPedido)) {
+            $this->cantidadesPlatosPedidos[] = $cantidadesPlatosPedido;
+            $cantidadesPlatosPedido->setPedido($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCantidadesPlatosPedido(CantidadesPlatosPedidos $cantidadesPlatosPedido): self
+    {
+        if ($this->cantidadesPlatosPedidos->removeElement($cantidadesPlatosPedido)) {
+            // set the owning side to null (unless already changed)
+            if ($cantidadesPlatosPedido->getPedido() === $this) {
+                $cantidadesPlatosPedido->setPedido(null);
+            }
+        }
 
         return $this;
     }

@@ -66,6 +66,12 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/friendsofphp/proxy-manager-lts" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/maker-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/nikic/php-parser" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/cache-contracts 2" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/dotenv 2" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/cache 2" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/event-dispatcher-contracts 2" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/deprecation-contracts 2" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-intl-grapheme 2" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

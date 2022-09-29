@@ -63,6 +63,12 @@
       <path value="$PROJECT_DIR$/vendor/friendsofphp/proxy-manager-lts" />
       <path value="$PROJECT_DIR$/vendor/symfony/maker-bundle" />
       <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/vendor/symfony/cache-contracts 2" />
+      <path value="$PROJECT_DIR$/vendor/symfony/dotenv 2" />
+      <path value="$PROJECT_DIR$/vendor/symfony/cache 2" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher-contracts 2" />
+      <path value="$PROJECT_DIR$/vendor/symfony/deprecation-contracts 2" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-grapheme 2" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.2">
