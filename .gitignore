@@ -7,4 +7,8 @@
 /public/bundles/
 /var/
 /vendor/
+
+#Las carpetas '.idea' y '.env' se escriben aquí para que git no las suba (en este caso dejamos comentada la carpeta '.env' para que sí que lo haga ya que queremos tenerla guardada a modo de ejemplo para otros proyectos, pero en un proyecto real no debería comentarse ya que ahí reside la información de nuestra bbdd -> nombre, contraseña, puerto...)
+/.idea/
+#/.env/
 ###< symfony/framework-bundle ###
