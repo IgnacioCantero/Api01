@@ -3,12 +3,13 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\MunicipiosRepository;
 
 /**
  * Municipios
  *
  * @ORM\Table(name="municipios", indexes={@ORM\Index(name="IDX_BBFAB58653AF4E34", columns={"id_provincia"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass=MunicipiosRepository::class)
  */
 class Municipios
 {
@@ -37,6 +38,35 @@ class Municipios
      * })
      */
     private $idProvincia;
+
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
+    public function getMunicipio(): ?string
+    {
+        return $this->municipio;
+    }
+
+    public function setMunicipio(?string $municipio): self
+    {
+        $this->municipio = $municipio;
+
+        return $this;
+    }
+
+    public function getIdProvincia(): ?Provincias
+    {
+        return $this->idProvincia;
+    }
+
+    public function setIdProvincia(?Provincias $idProvincia): self
+    {
+        $this->idProvincia = $idProvincia;
+
+        return $this;
+    }
 
 
 }
