@@ -12,6 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class CategoriaController extends AbstractController
 {
+    //http://127.0.0.1:8000/categoria?categoria=
     /**
      * @Route  ("/categoria", name="create_categoria")
      */
@@ -30,7 +31,7 @@ class CategoriaController extends AbstractController
                 'data' => null,
                 'error' => 'Categoria controller can´t be null or empty'
             ]);
-            return $response;
+            return $response->setStatusCode(400);
         }
         //4º -> Crear un nuevo objeto y setear sus atributos, ya que han enviado bien los datos de la petición (request)
         $categoria = new Categorias();
@@ -50,6 +51,7 @@ class CategoriaController extends AbstractController
         return $response;
     }
 
+    //http://127.0.0.1:8000/categoria/list
     /**
      * @Route ("/categoria/list", name="list_categoria")
      */
@@ -66,7 +68,7 @@ class CategoriaController extends AbstractController
                 'data' => null,
                 'error' => 'Categoria controller can´t be null or empty'
             ]);
-            return $response;
+            return $response->setStatusCode(400);
         }
         //4º -> Enviar Array '$categorias' en formato Json (como Symfony no sabe pasar de Array a Json, hay que pasar cada objeto del Array '$categorias' a Json por separado)
         $categoriasAsArray = [];
@@ -84,8 +86,3 @@ class CategoriaController extends AbstractController
         return $response;
     }
 }
-
-
-
-
-
