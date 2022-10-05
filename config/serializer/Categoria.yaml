@@ -1,6 +1,7 @@
 App\Entity\Categoria:
   attributes:
     id:
-      groups: ['categoria_list']
+      groups: ['post_add_categoria']
+
     categoria:
-      groups: ['categoria', 'categoria_list']
+      groups: ['get_list_categorias', 'post_add_categoria']
