@@ -1,0 +1,10 @@
+App\Entity\Categorias:
+  properties:
+    categoria:
+      - NotBlank:
+          message: 'El nombre de la categoria no puede ser nulo o estar vacío'
+      - Length:
+          min: 2
+          max: 100
+          minMessage: 'El nombre de la categoría debe contener al menos 2 caracteres'
+          maxMessage: 'El nombre de la categoría es demasiado largo'
