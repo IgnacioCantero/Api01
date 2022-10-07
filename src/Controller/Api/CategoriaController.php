@@ -17,7 +17,6 @@ use Symfony\Component\HttpFoundation\Response;
 class CategoriaController extends AbstractFOSRestController
 {
     //CRUD -> Create(1), Read(2), Update(3), Delete(4)
-
     private $categoriaRepository;
 
     public function __construct(CategoriasRepository $repo)
