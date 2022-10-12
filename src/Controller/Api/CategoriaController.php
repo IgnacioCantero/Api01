@@ -95,9 +95,9 @@ class CategoriaController extends AbstractFOSRestController
         }
         //5º -> Guardar el objeto en bbdd
         print_r($form->getData());
-        $this->categoriaRepository->add($form->getData(), true);
+        $this->categoriaRepository->add($cat, true);
         //6º -> Devolver siempre una respuesta
-        return $form->getData();
+        return $cat;
     }
 
     #3
@@ -106,18 +106,17 @@ class CategoriaController extends AbstractFOSRestController
      * @Rest\View(serializerGroups={"patch_update_one_categoria"}, serializerEnableMaxDepthChecks=true)
      */
     public function updateCategoriaAction(Request $request) {
-        $catedoriaID = $request->get('id');
-        $catedoria = $this->categoriaRepository->find($catedoriaID);
-        if (!$catedoria) {
+        $categoria = $this->categoriaRepository->find($request->get('id'));
+        if (!$categoria) {
             return new JsonResponse("No se ha encontrado la categoría", Response::HTTP_NOT_FOUND);
         }
-        $form = $this->createForm(CategoriaType::class, $catedoria, ['method'=>$request->getMethod()]);
+        $form = $this->createForm(CategoriaType::class, $categoria, ['method'=>$request->getMethod()]);
         $form->handleRequest($request);
         if (!$form->isSubmitted() || !$form->isValid()) {
             return new JsonResponse("Bad data", 400);
         }
-        $this->categoriaRepository->add($catedoria, true);
-        return $catedoria;
+        $this->categoriaRepository->add($categoria, true);
+        return $categoria;
     }
 
     #4
@@ -125,8 +124,7 @@ class CategoriaController extends AbstractFOSRestController
      * @Rest\Delete(path="/{id}")
      */
     public function deleteCategoriaAction(Request $request) {
-        $categoriaId = $request->get('id');
-        $categoria = $this->categoriaRepository->find($categoriaId);
+        $categoria = $this->categoriaRepository->find($request->get('id'));
         if (!$categoria) {
             return new JsonResponse("No se ha encontrado la categoría", 400);
         }

@@ -1,0 +1,28 @@
+App\Entity\Clientes:
+  properties:
+    nombre:
+      - NotBlank:
+          message: 'El nombre del cliente no puede ser nulo o estar vacío'
+      - Length:
+          min: 2
+          max: 100
+          minMessage: 'El nombre del cliente debe contener al menos 2 caracteres'
+          maxMessage: 'El nombre del cliente es demasiado largo'
+    apellidos:
+      - NotBlank:
+          message: 'Los apellidos del cliente no pueden ser nulos o estar vacíos'
+      - Length:
+          min: 2
+          max: 100
+          minMessage: 'Los apellidos del cliente deben contener al menos 2 caracteres'
+          maxMessage: 'Los apellidos del cliente son demasiado largos'
+    telefono:
+      - NotBlank:
+          message: 'El teléfono del cliente no puede ser nulo o estar vacío'
+      - Regex:
+          pattern: '/^[0-9]+$/i'
+          match: true
+          message: 'Ha funcionado'
+      - Length:
+          max: 9
+          maxMessage: 'El teléfono del cliente es demasiado largo [Máx. 9 números]'

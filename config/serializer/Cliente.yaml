@@ -1,0 +1,19 @@
+App\Entity\Clientes:
+  attributes:
+    id:
+      groups: ['post_add_cliente', 'get_list_one_cliente', 'get_list_all_clientes', 'patch_update_one_cliente']
+
+    nombre:
+      groups: ['post_add_cliente', 'get_list_one_cliente', 'get_list_all_clientes', 'patch_update_one_cliente']
+
+    apellidos:
+      groups: ['post_add_cliente', 'get_list_one_cliente', 'get_list_all_clientes', 'patch_update_one_cliente']
+
+    telefono:
+      groups: ['post_add_cliente', 'get_list_one_cliente', 'get_list_all_clientes', 'patch_update_one_cliente']
+
+    direcciones:
+      groups: []
+
+    pedidos:
+      groups: []

@@ -1,0 +1,14 @@
+#No poner las variables que hacen referencia a relaciones
+#No es obligatorio poner todas las variables
+App\Entity\Direcciones:
+  properties:
+    calle:
+      - NotBlank:
+          message: 'La calle no puede ser nulo o estar vacío'
+    numero:
+      - NotBlank:
+          message: 'El número no puede ser nulo o estar vacío'
+    codPostal:
+      - NotBlank:
+          message: 'El código postal no puede ser nulo o estar vacío'
+
