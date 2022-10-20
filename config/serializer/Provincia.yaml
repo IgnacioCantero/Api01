@@ -1,0 +1,6 @@
+App\Entity\Provincias:
+  attributes:
+    id:
+      groups: ['post_add_one_direccion', 'direccion', 'provincias']
+    provincia:
+      groups: ['post_add_one_direccion', 'direccion', 'provincias']

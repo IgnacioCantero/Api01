@@ -1,0 +1,16 @@
+App\Entity\Platos:
+  attributes:
+    id:
+      groups: ['restaurante']
+    nombre:
+      groups: ['restaurante']
+    descripcion:
+      groups: ['restaurante']
+    imagenUrl:
+      groups: ['restaurante']
+    precio:
+      groups: ['restaurante']
+#    restaurantes:
+#      groups: []
+    alergenos:
+      groups: ['restaurante']

@@ -1,0 +1,12 @@
+App\Entity\User:
+  attributes:
+    id:
+      groups: ['user']
+
+    email:
+      groups: ['user']
+
+    roles:
+      groups: ['user']
+
+    #password: -> el password nunca se tiene que enviar

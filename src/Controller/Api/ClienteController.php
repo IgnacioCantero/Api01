@@ -32,6 +32,11 @@ class ClienteController extends AbstractFOSRestController
      * @Rest\View(serializerGroups={"post_add_cliente"}, serializerEnableMaxDepthChecks=true)
      */
     public function createClienteAction(Request $request) {
+        //Asociar a su user
+        /*Ejemplo de funcionamiento:
+         * 1º - El usuario se registra con email y password -> obtenemos su User y nos devuelve el idUser y el role
+         * 2º - Mostramos una nueva ventana para generar el cliente (nombre, apellidos, teléfono...)
+         */
         $cliente = new Clientes();
         $form = $this->createForm(ClienteType::class, $cliente);
         $form->handleRequest($request);

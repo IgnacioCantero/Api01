@@ -13,6 +13,13 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class DireccionType extends AbstractType
 {
+    public function configureOptions(OptionsResolver $resolver): void
+    {
+        $resolver->setDefaults([
+            'data_class' => Direcciones::class,
+        ]);
+    }
+
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
@@ -25,13 +32,6 @@ class DireccionType extends AbstractType
             ->add('municipio', EntityType::class, ['class'=>Clientes::class])
             ->add('provincia', EntityType::class, ['class'=>Clientes::class])
         ;
-    }
-
-    public function configureOptions(OptionsResolver $resolver): void
-    {
-        $resolver->setDefaults([
-            'data_class' => Direcciones::class,
-        ]);
     }
 
     //Por defecto le pone un nombre al formulario -> para dejar vacío dicho nombre:

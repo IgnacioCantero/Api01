@@ -64,6 +64,12 @@ class Restaurantes
      */
     private $pedidos;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Municipios::class)
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $municipio;
+
     public function __construct()
     {
         $this->platos = new ArrayCollection();
@@ -247,6 +253,18 @@ class Restaurantes
                 $pedido->setRestaurante(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getMunicipio(): ?Municipios
+    {
+        return $this->municipio;
+    }
+
+    public function setMunicipio(?Municipios $municipio): self
+    {
+        $this->municipio = $municipio;
 
         return $this;
     }

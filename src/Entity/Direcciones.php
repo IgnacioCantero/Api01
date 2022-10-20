@@ -44,13 +44,13 @@ class Direcciones
     private $clientes;
 
     /**
-     * @ORM\OneToOne(targetEntity=Municipios::class, cascade={"persist", "remove"})
+     * @ORM\ManyToOne(targetEntity=Municipios::class)
      * @ORM\JoinColumn(nullable=false)
      */
     private $municipio;
 
     /**
-     * @ORM\OneToOne(targetEntity=Provincias::class, cascade={"persist", "remove"})
+     * @ORM\ManyToOne(targetEntity=Provincias::class)
      * @ORM\JoinColumn(nullable=false)
      */
     private $provincia;

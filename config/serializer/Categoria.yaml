@@ -1,7 +1,7 @@
 App\Entity\Categorias:
   attributes:
     id:
-      groups: ['post_add_one_categoria', 'get_list_one_categoria', 'patch_update_one_categoria']
+      groups: ['post_add_one_categoria', 'get_list_one_categoria', 'patch_update_one_categoria', 'restaurante', 'rest_filtered']
 
     categoria:
-      groups: ['get_list_all_categorias', 'post_add_one_categoria', 'get_list_one_categoria', 'patch_update_one_categoria']
+      groups: ['get_list_all_categorias', 'post_add_one_categoria', 'get_list_one_categoria', 'patch_update_one_categoria', 'restaurante', 'rest_filtered']

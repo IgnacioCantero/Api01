@@ -1,25 +1,25 @@
 App\Entity\Direcciones:
   attributes:
     id:
-      groups: ['post_add_one_direccion']
+      groups: ['post_add_one_direccion', 'direccion']
 
     calle:
-      groups: ['post_add_one_direccion']
+      groups: ['post_add_one_direccion', 'direccion']
 
     numero:
-      groups: ['post_add_one_direccion']
+      groups: ['post_add_one_direccion', 'direccion']
 
     puertaPisoEscalera:
-      groups: ['post_add_one_direccion']
+      groups: ['post_add_one_direccion', 'direccion']
 
     codPostal:
-      groups: ['post_add_one_direccion']
+      groups: ['post_add_one_direccion', 'direccion']
 
     clientes:
       groups: ['post_add_one_direccion']
 
     municipio:
-      groups: ['post_add_one_direccion']
+      groups: ['post_add_one_direccion', 'direccion']
 
     provincia:
-      groups: ['post_add_one_direccion']
+      groups: ['post_add_one_direccion', 'direccion']

@@ -1,0 +1,6 @@
+App\Entity\Municipios:
+  attributes:
+    id:
+      groups: ['post_add_one_direccion', 'direccion', 'municipios']
+    municipio:
+      groups: ['post_add_one_direccion', 'direccion', 'municipios']

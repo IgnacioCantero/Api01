@@ -1,0 +1,25 @@
+App\Entity\Restaurantes:
+  attributes:
+    id:
+      groups: ['restaurante', 'rest_filtered']
+    nombre:
+      groups: ['restaurante', 'rest_filtered']
+    logoUrl:
+      groups: ['restaurante', 'rest_filtered']
+    imagenUrl:
+      groups: ['restaurante']
+    descripcion:
+      groups: ['restaurante']
+    destacado:
+      groups: ['restaurante']
+    platos:
+      groups: ['restaurante']
+    horarios:
+      groups: []
+    categorias:
+      groups: ['rest_filtered']
+#    Los pedidos no nos interesa ponerlos dado que el usuario no debería verlos
+#    pedidos:
+#      groups: []
+    municipio:
+      groups: []
