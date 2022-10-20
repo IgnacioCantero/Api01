@@ -5,6 +5,7 @@ namespace App\Controller\Api;
 use App\Entity\Direcciones;
 use App\Form\DireccionType;
 use App\Repository\ClientesRepository;
+
 use App\Repository\DireccionesRepository;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
 use FOS\RestBundle\Controller\Annotations as Rest;
@@ -29,7 +30,7 @@ class DireccionController extends AbstractFOSRestController
     //http://127.0.0.1:8000/api/direccion/
     /**
      * @Rest\Post(path="/")
-     * @Rest\View(serializerGroups={"post_add_one_direccion"}, serializerEnableMaxDepthChecks=true)
+     * @Rest\View (serializerGroups={"post_add_one_direccion"}, serializerEnableMaxDepthChecks=true)
      */
     public function createDireccionAction(Request $request) {
         $direccion = new Direcciones();
